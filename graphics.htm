@@ -2,16 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Rent a Pet - Graphics</title>
+<title>Backyard Birds - Graphics</title>
 
 <style type="text/css">
 
 
 	#thumbs, #image {
-		width: 900px;
+		width: 700px;
+		border: solid 1px 000;
 		text-align: center;
 		margin: 0 auto 0 auto;
 		color: #000;
+		background: #eee;
+		padding: 5px
 	}
 
 	#thumbs {
@@ -25,15 +28,62 @@
 	}
 
 	#image{
-		height:500px;
+		height:400px;
 	}
 
 	.instructions{
 		font-style:italic;
 	}
+	
 
 </style>
-
+<script type="text/javascript">
+<!--Begin comment for older browsers//-->
+var imgArray=new  Array(
+	'Image1Lg.jpg',
+'Image2Lg.jpg',
+'Image3Lg.jpg',
+'Image4Lg.jpg'
+);
+var titleArray=new Array(
+	'Brave Bald Eagle',
+'Soaring Hawk',
+'Buzzing Hummingbird',
+'Wise Owl'
+);
+var imgPath="Images/Fullsize/";
+function swapImage(imgID){
+	var theImage=document.getElementById(theImage)
+	var textDiv=document.getElementById(bottomText)
+	var newImg;
+	var textTitle;
+	newImg=imgArray[imgID];
+	theImage.src=imgPath+newImg;
+	textTitle=titleArray[imgID];
+	textDiv.innerHTML=textTitle;
+	function preloadImages(){
+		for(var i=0; i<imgArray.lenght;i++){
+			var tmpImg="new Image";
+			tmpImg.src="imgPath+imgArray[i]";
+		}
+	}
+}
+//End comment for older browsers-->
+</script>
+<p class="instructions">
+	<div id="thumbs">
+		<img src="Images/Thumbnails/Image1.psd.jpg" alt="BaldEagle" onmouseover="swapImage(0)";/>
+		<img src="Images/Thumbnails/Image2.psd.jpg" alt="Hawk" onmouseover="swapImage(0)";/>
+		<img src="Images/Thumbnails/Image3.psd.jpg" alt="Hummingbird" onmouseover="swapImage(0)";/>
+		<img src="Images/Thumbnails/Image4.psd.jpg" alt="Owl" onmouseover="swapImage(0)";/>
+					<br/>
+	</div>
+	<div id="image">
+		<img id="theImage"src="Imgages/FullSize/Image1Lg.jpg" alt="BaldEagle;"/>
+		<h3 id="bottomText">Brave Bald Eagle</h3>
+	</div>
+	
+</p>
 <script language="JavaScript" type="text/javascript">
 
 	PrintButton1 = new Image
@@ -104,7 +154,7 @@ if (document.images) {
 	<a href="" onMouseOver="document.PrintButton.src=PrintButton2.src;"
 	onMouseOut="document.PrintButton.src=PrintButton1.src;">
 
-	<img src="images/print5.gif" width="250" height="50" 
+	<img src="images/print5.gif" width="200" height="50" 
 	name="PrintButton" alt="PrintButton" style="border:none;"/>
 
 	</a>
@@ -112,8 +162,8 @@ if (document.images) {
 
 
 <div id="logo">
-	<a href="logo.html" onMouseOver="document.logo.src=logo2.src;"
-	onMouseOut="document.logo.src=logo1.src;">
+	<a href="logo.html" onMouseOver="document.Images/BackyardBirdLogo2.jpg;"
+	onMouseOut="document.Image/BackyardBirdLogo;">
 
 	<img src="images/logo1.jpg" width="133" height="126" 
 	name="logo" alt="logo" style="border:none;"/>
